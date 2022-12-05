@@ -2,6 +2,7 @@ import { Stack } from '@mui/material' //to see what a component does, hover over
 import { Link } from 'react-router-dom';
 
 import { logo } from '../utils/constants';
+import SearchBar from './SearchBar';
 
 const Navbar = () => ( //instant return by getting rid of curly brackets. no need for return
     <Stack 
@@ -14,6 +15,7 @@ const Navbar = () => ( //instant return by getting rid of curly brackets. no nee
       <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
         <img src={logo} alt="logo" height={45} />
       </Link>
+      <SearchBar />
     </Stack> 
   )
 
