@@ -11,7 +11,7 @@ import { demoProfilePicture } from '../utils/constants';
 //   )
 // }
 
-//1:30:50 - may need to restart ChannelCard section (and possibly even VideoCard section) of video to see how my code is different, bc I'm not always getting image back and I have this marginTop thing when he doesn't.
+//1:30:50 - may need to restart ChannelCard section (and possibly even VideoCard section) of video to see how my code is different, bc I'm not always getting image back and I have this marginTop thing when he doesn't. -> I think it may be just the amount of data I'm allowed to get back from API
 
 const ChannelCard = ({ channelDetail }) => (
 // const ChannelCard = ({ channelDetail, marginTop }) => (
@@ -37,6 +37,8 @@ const ChannelCard = ({ channelDetail }) => (
         />
         <Typography variant="h6">
           {channelDetail?.snippet?.title}{' '}
+          {/* {channelDetail?.snippet?.title} */}
+          {/* Above, github has the empty string but he didn't have that in video - not sure what empty string is doing  */}
           <CheckCircleIcon sx={{ fontSize: '14px', color: 'gray', ml: '5px' }} />
         </Typography>
         {channelDetail?.statistics?.subscriberCount && (
