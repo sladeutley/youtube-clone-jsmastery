@@ -2,9 +2,9 @@ import { Stack } from '@mui/material';
 
 import { categories } from '../utils/constants';
 
-const selectedCategory = 'New';
+// const selectedCategory = 'New'; //no longer need static variable
 
-const Sidebar = () => (
+const Sidebar = ({ selectedCategory, setSelectedCategory }) => ( //this is coming through props as we call this variable
   <Stack
     direction="row"
     sx={{
