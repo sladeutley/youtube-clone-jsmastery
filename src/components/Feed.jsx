@@ -35,7 +35,7 @@ const Feed = () => { //not sure why we keep curly braces here and don't do a dir
 
       <Box p={2} sx={{ overflowY: 'auto', height: '90vh', flex: 2 }}>
         <Typography variant="h4" fontWeight="bold" mb={2} sx={{color: 'white' }}>
-          New <span style={{ color: '#F31503'}}>videos</span>
+          {selectedCategory} <span style={{ color: '#F31503'}}>videos</span>
         </Typography>
 
         Below, passing a videos prop into the Videos. Can only pass an empty array at this point bc we don't have videos. so next step is to fetch the data to be able to show the videos.

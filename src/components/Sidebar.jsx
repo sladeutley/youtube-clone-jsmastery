@@ -16,6 +16,7 @@ const Sidebar = ({ selectedCategory, setSelectedCategory }) => ( //this is comin
     {categories.map((category) => (
       <button
       className="category-btn"
+      onClick={() => setSelectedCategory(category.name)} //set selected category to category.name
       style={{
         background: category.name === selectedCategory && '#FC1503', //this means, if category name equals selectedCategory then make the color '#FC1503'. We're doing this bc colors weren't showing up?
         color: 'white'
