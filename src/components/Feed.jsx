@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 
-import Sidebar from './Sidebar';
-import Videos from './Videos';
+import { Sidebar, Videos } from './';
+// import { Sidebar, Videos } from './components'; // This is same as above, but don't have to put "from './Components'" bc we're already in Components folder
 
 const Feed = () => { //not sure why we keep curly braces here and don't do a direct return?
   return (
