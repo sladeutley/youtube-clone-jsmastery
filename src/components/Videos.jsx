@@ -8,7 +8,6 @@ const Videos = ({ videos }) => { //have to pass videos as prop
     <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
       {videos.map((item, idx) => (
         <Box key={idx}>
-          {item.id.videoID}
           {item.id.videoId && <VideoCard video={item} />}
           {item.id.channelId && <ChannelCard channelDetail={item} />}
           {/* Needed to do video and channel detail above bc sometimes we get video and sometimes we get channel. This is is saying, if data comes back video id, show video (by passing video prop), and if it comes back channel id, then show channel  */}
