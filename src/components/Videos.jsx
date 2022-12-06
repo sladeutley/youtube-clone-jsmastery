@@ -1,10 +1,18 @@
-import React from 'react'
+import { Stack, Box } from '@mui/material';
+//1:03:00 - *Also, at some point I will have to update commits including apiKey and put .env in gitignore, or maybe get another one for when do real project bc who cares
 
 const Videos = ({ videos }) => { //have to pass videos as prop
   console.log(videos);
-
   return (
-    <div>Videos</div>
+    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+      {videos.map((item, idx) => (
+        <Box key={idx}>
+          {item.id.videoID && <VideoCard video={item} />}
+          {item.id.channelID && <ChannelCard channelDetail={item} />}
+          {/* Needed to do video and channel detail above bc sometimes we get video and sometimes we get channel. This is is saying, if data comes back video id, show video, and if it comes back channel id, then show channel  */}
+        </Box>
+      ))}
+    </Stack>
   )
 }
 
