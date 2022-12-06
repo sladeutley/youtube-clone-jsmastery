@@ -10,11 +10,13 @@ import { Sidebar, Videos } from './';
 const Feed = () => { //not sure why we keep curly braces here and don't do a direct return?
 
   const [selectedCategory, setSelectedCategory] = useState('New'); //at start it's set to new
+  const [videos, setVideos] = useState([]); //have to set state here for once get data in '.then' in fetchFromAPI function below, it'll change the category
   
   // to use this function, we'll implement useEffect, which is a lifecycle hook that gets called when component initially loads (which is what we want - want videos to load on this page). Also, have to provide a dependency array which for now we'll leave empty (meaning code within this function will only load when we reload the page) 
 
   useEffect(() => {
     fetchFromAPI(`search?part=snippet&q=${selectedCategory}`) //q is query
+      .then((data) => setVideos(data.items))
   }, [selectedCategory]); //since we're using 'selectedCategory' within useEffect, we also need to add it to the dependency array here. This means it's going to call this function every time we change the category.
   
   return (
@@ -39,7 +41,7 @@ const Feed = () => { //not sure why we keep curly braces here and don't do a dir
         </Typography>
 
         Below, passing a videos prop into the Videos. Can only pass an empty array at this point bc we don't have videos. so next step is to fetch the data to be able to show the videos.
-        <Videos videos={[]}/>
+        <Videos videos={videos}/>
       </Box>
     </Stack>
   )
