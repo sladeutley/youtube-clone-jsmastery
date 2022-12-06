@@ -4,6 +4,8 @@ import { Box, Stack, Typography } from '@mui/material';
 import { Sidebar, Videos } from './';
 // import { Sidebar, Videos } from './components'; // This is same as above, but don't have to put "from './Components'" bc we're already in Components folder
 
+// Fetching videos - go to https://rapidapi.com/ytdlfree/api/youtube-v31/ -> click 'Subscribe to Test' button, sign up for free plan, then go back to 'Endpoints' tab -> click on 'GET Suggested Videos' on left of screen, copy options object on right of screen (starts with 'const options') then create 'fetchFromAPI.js' within 'utils' folder, and in that file import axios like i've done in the code, and past the options object.
+
 const Feed = () => { //not sure why we keep curly braces here and don't do a direct return?
   return (
     <Stack sx={{ flexDirection: { sx: "column", md: "row"} }}>
