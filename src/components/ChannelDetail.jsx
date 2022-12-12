@@ -20,6 +20,8 @@ const ChannelDetail = () => {
       .then((data) => setVideos(data?.items)); //this reads as setVideos which is equal to data?.items
   }, [id]) //[id] makes it so this hook will render as well whenever the id changes
 
+  //To avoid errors from typos, etc. it can help to use the rapidAPI extension - he explains this part and how to use the extension at 1:37:39 of video
+
   return (
     <div>{id}</div>
   )
