@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'; //neeed this bc once click on card, need to navigate to video detail of that card
 import { Typography, Card, CardContent, CardMedia } from '@mui/material';
-import CheckCircleIcon from "@mui/icons-material/CheckCircle"; //he had this differently on tutorial but this is what his github had
+import CheckCircleIcon from "@mui/icons-material/CheckCircle"; //he had this differently on tutorial but this is what his github had. Below is what he did in tutorial (just looks like desturcturing)
+// import { CheckCircle } from '@mui/icons-material';
 
 import { demoThumbnailUrl, demoVideoUrl, demoVideoTitle, demoChannelUrl, demoChannelTitle } from "../utils/constants"; //this is going to be used to populate card if we cannot fetch for whatever reason
 
@@ -30,6 +31,8 @@ const VideoCard = ({ video: { id: { videoId }, snippet } }) => ( //passing video
         <Typography variant="subtitle2" color="gray">
           {snippet?.channelTitle || demoChannelTitle}
           <CheckCircleIcon sx={{ fontSize: "12px", color: "gray", ml: "5px" }} />
+          {/* Below is what it would check circle icon would look like without the destructuring (commented out at top) */}
+          {/* <CheckCircle sx={{ fontSize: "12px", color: "gray", ml: "5px" }} /> */}
         </Typography>
       </Link>
     </CardContent>

@@ -11,9 +11,8 @@ import { demoProfilePicture } from '../utils/constants';
 //   )
 // }
 
-//1:30:50 - may need to restart ChannelCard section (and possibly even VideoCard section) of video to see how my code is different, bc I'm not always getting image back and I have this marginTop thing when he doesn't. -> I think it may be just the amount of data I'm allowed to get back from API
-
 const ChannelCard = ({ channelDetail }) => (
+// below got ride of marginTop bc he doesn't have it in tutorial (at least not yet 1:30 mark) but does in github code. 
 // const ChannelCard = ({ channelDetail, marginTop }) => (
   <Box
     sx={{
@@ -45,6 +44,7 @@ const ChannelCard = ({ channelDetail }) => (
           <Typography sx={{ fontSize: '15px', fontWeight: 500, color: 'gray' }}>
             {parseInt(channelDetail?.statistics?.subscriberCount).toLocaleString('en-US')} Subscribers
           </Typography>
+          //Above, subscribers won't show up here bc we don't have access to the statistics object, but it will appear on the channel page
         )}
       </CardContent>
     </Link>
