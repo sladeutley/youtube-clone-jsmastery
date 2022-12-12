@@ -1,4 +1,4 @@
-// import React from 'react' //FOR SOME Reason, the teacher's code all has 'import React from 'react' on top of github jsx files, but it's not in there in the tutorial -> look into this
+// import React from 'react' //FOR SOME Reason, the teacher's code all has 'import React from 'react' on top of github jsx files, but it's not in there in the tutorial -> look into this -> Don't need to import react anymore for components since v17 release
 import { Box, CardContent, CardMedia, Typography } from '@mui/material';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import { Link } from 'react-router-dom';
