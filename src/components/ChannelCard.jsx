@@ -24,7 +24,8 @@ const ChannelCard = ({ channelDetail }) => (
       width: { xs: '356px', md: '320px' },
       height: '326px',
       margin: 'auto',
-      // marginTop 
+      // marginTop - below is doing same thing I think this eventually is going to do when pass marginTop above
+      marginTop: '-93px'
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
