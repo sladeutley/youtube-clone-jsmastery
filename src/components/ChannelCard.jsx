@@ -11,9 +11,9 @@ import { demoProfilePicture } from '../utils/constants';
 //   )
 // }
 
-const ChannelCard = ({ channelDetail }) => (
+// const ChannelCard = ({ channelDetail }) => (
 // below got ride of marginTop bc he doesn't have it in tutorial (at least not yet 1:30 mark) but does in github code. 
-// const ChannelCard = ({ channelDetail, marginTop }) => (
+const ChannelCard = ({ channelDetail, marginTop }) => (
   <Box
     sx={{
       boxShadow: 'none',
@@ -24,8 +24,9 @@ const ChannelCard = ({ channelDetail }) => (
       width: { xs: '356px', md: '320px' },
       height: '326px',
       margin: 'auto',
-      // marginTop - below is doing same thing I think this eventually is going to do when pass marginTop above
-      marginTop: '-93px'
+      marginTop
+      // marginTop: marginTop //Above is shorthand for this
+      // marginTop: '-93px'
     }}
   >
     <Link to={`/channel/${channelDetail?.id?.channelId}`}>
