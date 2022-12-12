@@ -22,6 +22,22 @@ const ChannelDetail = () => {
 
   //To avoid errors from typos, etc. it can help to use the rapidAPI extension - he explains this part and how to use the extension at 1:37:39 of video
 
+  // Below, another way to do useEffect hook above
+
+  // useEffect(() => {
+  //   const fetchResults = async () => {
+  //     const data = await fetchFromAPI(`channels?part=snippet&id=${id}`);
+
+  //     setChannelDetail(data?.items[0]);
+
+  //     const videosData = await fetchFromAPI(`search?channelId=${id}&part=snippet%2Cid&order=date`);
+
+  //     setVideos(videosData?.items);
+  //   };
+
+  //   fetchResults();
+  // }, [id]);
+
   return (
     <div>{id}</div>
   )
