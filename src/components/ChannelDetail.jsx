@@ -6,11 +6,15 @@ import { Videos, ChannelCard } from "./"; //adding this so can reuse these compo
 import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const ChannelDetail = () => {
+  const [channelDetail, setChannelDetail] = useState(null); //sets channel detail. At start set to null - don't know why
+
   const { id } = useParams(); //need channel id and this is how we get access to the channel id
+
+  console.log(channelDetail);
 
   useEffect(() => { //going to render as soon as component opens
     fetchFromAPI(`channels?part="snippet&id=${id}`)
-      .then((data) => )
+      .then((data) => setChannelDetail(data?.items[0]));
   }, [id]) //[id] makes it so this hook will render as well whenever the id changes
 
   return (
