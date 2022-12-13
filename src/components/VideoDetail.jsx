@@ -9,6 +9,13 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 
 const VideoDetail = () => {
+  const { id } = useParams();
+
+  useEffect(() => {
+    fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
+      .then((data) =>)
+  }, [id]);
+
   return (
     <Box minHeight="95vh">
       <Stack direction={{ xs: 'column', md: 'row' }}>
