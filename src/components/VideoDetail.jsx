@@ -17,6 +17,8 @@ const VideoDetail = () => {
       .then((data) => setVideoDetail(data.items[0]));
   }, [id]);
 
+  if (!videoDetail?.snippet) return 'Loading...';
+
   // const { snippet } = videoDetail; //this is called object destructuring
   const { snippet: { title, channelId, channelTitle }, statistics: {viewCount, likeCount} } = videoDetail; //this is even more destructured than above
 
