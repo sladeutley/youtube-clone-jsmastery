@@ -10,7 +10,7 @@ import { fetchFromAPI } from '../utils/fetchFromAPI';
 
 const VideoDetail = () => {
   const [videoDetail, setVideoDetail] = useState(null); //at start, set to null
-  const [videos, setVideos] = useState(null);
+  const [videos, setVideos] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
