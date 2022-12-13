@@ -14,7 +14,7 @@ const VideoDetail = () => {
 
   useEffect(() => {
     fetchFromAPI(`videos?part=snippet,statistics&id=${id}`)
-      .then((data) =>)
+      .then((data) => setVideoDetail(data.items[0]));
   }, [id]);
 
   return (
