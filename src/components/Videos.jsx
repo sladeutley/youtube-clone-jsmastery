@@ -2,10 +2,12 @@ import { Stack, Box } from '@mui/material';
 //1:03:00 - *Also, at some point I will have to update commits including apiKey and put .env in gitignore, or maybe get another one for when do real project bc who cares
 import { VideoCard, ChannelCard } from './';
 
-const Videos = ({ videos }) => { //have to pass videos as prop
+const Videos = ({ videos, direction }) => { //have to pass videos as prop
   // console.log(videos);
   return (
-    <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+    // <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
+    // Below, after passing in direction prop, now we wanna say if there is a specific direction passed in, use that, if not, use row 
+    <Stack direction={direction || "row"} flexWrap="wrap" justifyContent="start" gap={2}>
       {videos.map((item, idx) => (
         //Above and below, idx is index
         <Box key={idx}> 
