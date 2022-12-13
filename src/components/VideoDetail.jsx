@@ -18,7 +18,7 @@ const VideoDetail = () => {
   }, [id]);
 
   // const { snippet } = videoDetail; //this is called object destructuring
-  const { snippet: { title } } = videoDetail; //this is even more destructured than above
+  const { snippet: { title, channelId, channelTitle }, statistics: {viewCount, likeCount} } = videoDetail; //this is even more destructured than above
 
   return (
     <Box minHeight="95vh">
@@ -29,6 +29,13 @@ const VideoDetail = () => {
             <Typography color="#fff" variant="h5" fontWeight="bold" p={2}>
               {title}
             </Typography>
+            <Stack direction="row" justifyContent="space-between" sx={{ color: '#fff' }} py={1} px={2}>
+              <Link to={`/channel/${channelId}`}>
+                <Typography>
+                  {channelTitle}
+                </Typography>
+              </Link>
+            </Stack>
           </Box>
         </Box>
       </Stack>
