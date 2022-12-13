@@ -4,6 +4,8 @@ import { VideoCard, ChannelCard } from './';
 
 const Videos = ({ videos, direction }) => { //have to pass videos as prop
   // console.log(videos);
+  if (!videos?.length) return 'Loading...';
+
   return (
     // <Stack direction="row" flexWrap="wrap" justifyContent="start" gap={2}>
     // Below, after passing in direction prop, now we wanna say if there is a specific direction passed in, use that, if not, use row 
